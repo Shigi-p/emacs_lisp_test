@@ -77,7 +77,7 @@
 
 ;; 自動保存系のファイルを設定
 (setq make-backup-files t)
-(setq auto-save-file-name-transforms   '((".*" "~/tmp/" t)))
+(setq backup-directory-alist '((".*" . "~/.ehist")))
  ;; 保存の間隔
 (setq auto-save-timeout 10)     ;; 秒   (デフォルト : 30)
 (setq auto-save-interval 100)   ;; 打鍵 (デフォルト : 300)
@@ -93,8 +93,16 @@
 ;; フォントをM+に
 (setq default-frame-alist
       (append (list
-	       '(font . "M+ 2m light"))
+               '(font . "M+ 2m"))
               default-frame-alist))
+
+;; TABをスペースに変更
+(setq-default tab-width 4 indent-tabs-mode nil)
+
+;; ウィンドウを透明にする
+;; アクティブウィンドウ／非アクティブウィンドウ（alphaの値で透明度を指定）
+(add-to-list 'default-frame-alist '(alpha . (0.95 0.85)))
+
 ;; 以下パッケージ関連
 ;; パッケージ読み込み
 (require 'package)
