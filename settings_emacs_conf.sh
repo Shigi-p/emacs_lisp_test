@@ -7,4 +7,4 @@ if [ ! $emacs ]; then
 fi
 
 echo "(add-to-list 'load-path \"`pwd`\")" >> $emacs
-echo "(load \"shigi-init\")" >> $emacs
+echo "(load \"shigi_init\")" >> $emacs
